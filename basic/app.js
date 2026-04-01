@@ -9,4 +9,7 @@
 
 // alert("Hello World"); we are using nodejs, not browser 
  
-      
+ let score = 33     
+ console.log(typeof score);
+ console.log(typeof (score));
+ 
