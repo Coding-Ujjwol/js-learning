@@ -1,0 +1,78 @@
+:root{
+   --primary-color: #3498db;
+   --gradient: linear-gradient(312deg,#c82DB3, #A92BBc,#7524AF,#4D22B3);
+}
+
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    width: 100%;
+    background-color: #2d2d2d;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+nav{
+    height: 70px;
+    width: 90%;
+    background-color:rgba(0, 0, 0, 0.25);
+    margin: 30px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-radius: 50px;  
+}
+nav::after{
+    content: "";
+    position: absolute;
+    z-index: -1;
+    height: 70px;
+    border: 3px solid rgba(255, 255, 255, 0.708);
+    width: 100% ; 
+    border-radius: 50px;
+    background-image: var(--gradient); 
+}
+
+
+
+ .image {
+    left: 10px;
+    position: absolute;
+    z-index: 1;
+    height: 55px;
+    width: 9rem;
+    background-color: #000;
+    object-fit: cover;
+    border-top-left-radius:30px ;
+    border-bottom-left-radius:30px ;    
+    box-shadow: 0 0 10px 1px rgba(248, 246, 246, 0.75);
+}
+
+.input{
+    position: absolute;
+    right: 10px;
+    border-top-right-radius:30px ;
+    border-bottom-right-radius:30px ;
+    height: 60px;
+    width: 90%;
+    font-size: 20px;
+    box-shadow: 0 0 10px 1px rgba(248, 246, 246, 0.75);
+}
+
+.card {
+  /* The card will always be at least 250px tall */
+  min-height: 500px; 
+  min-width: 10px;
+  background-color: rgb(13, 227, 45);
+}

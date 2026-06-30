@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Task Manager</title>
+  <link rel="shortcut icon" href="https://imgs.search.brave.com/gw_bSxVBotlXgO5-LwFWMpaMtYc4Mou87Kf1MRb9lrk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9sb2dv/ZGl4LmNvbS9sb2dv/LzExNDMzMTcucG5n" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1> Task Manager</h1>
+
+<div class="top-bar">
+  <input id="taskInput" placeholder="Task title">
+  <input id="desc" placeholder="Description">
+
+  <select id="priority">
+    <option value="low">Low</option>
+    <option value="medium">Medium</option>
+    <option value="high">High</option>
+  </select>
+
+  <input type="date" id="dueDate">
+  <input id="tag" placeholder="Tag">
+  <input type="file" id="imageInput" accept="image/*">
+
+  <button id="addBtn">Add</button>
+  <input id="search" placeholder="Search tasks">
+</div>
+
+<div class="board">
+
+  <div class="column" id="todo">
+    <h3>To Do (<span class="count">0</span>)</h3>
+    <div class="bar"></div>
+  </div>
+
+  <div class="column" id="doing">
+    <h3>Doing (<span class="count">0</span>)</h3>
+    <div class="bar"></div>
+  </div>
+
+  <div class="column" id="done">
+    <h3>Done (<span class="count">0</span>)</h3>
+    <div class="bar"></div>
+  </div>
+
+</div>
+
+<!-- IMAGE MODAL -->
+<div id="modal">
+  <img id="modalImg">
+</div>
+
+<script src="p1.js"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!-- HTML Elements -->
+<input type="text" id="userInput" placeholder="Type something...">
+<button id="addBtn">Add to Array</button>
+
+<script>
+  // 1. Initialize an empty array
+  const myDataArray = [];
+
+  // 2. Select the HTML elements
+  const inputElement = document.getElementById('userInput');
+  const buttonElement = document.getElementById('addBtn');
+
+  // 3. Listen for the button click
+  buttonElement.addEventListener('click', () => {
+    // Get the text from the input field
+    const valueToAdd = inputElement.value;
+
+    // Check if the input is not empty
+    if (valueToAdd.trim() !== "") {
+      // 4. Push the value into the array
+      myDataArray.push(valueToAdd);
+      
+      console.log('Updated Array:', myDataArray);
+
+      // Clear the input field for the next entry
+      inputElement.value = '';
+    }
+  });
+</script>

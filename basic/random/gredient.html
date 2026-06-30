@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background: #000000ed;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .gradient{
+        background-color: rgb(41, 40, 40);
+        color: white;
+        padding: 1em 2em;
+        border: none;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        border-radius: 1000px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .gradient::after{
+        content: "";
+        position: absolute;
+        height: 107%;
+        width: 102%;
+        border-radius: 1000px;
+        background-image: linear-gradient(to bottom right,#008cff,#e100ff);
+        /* background-image: url(https://cdn.pixabay.com/photo/2025/08/13/06/44/snow-covered-peaks-9771614_1280.jpg);
+        background-size: cover; */
+        z-index: -1;
+        
+    }
+
+    .gradient:hover{
+        z-index: 0;
+        box-shadow: 40px 0 100px #e100ff75,-40px 0 100px#008cff73;
+       
+    }
+</style>
+<body>
+    <button class="gradient">Gradient Button </button>
+</body>
+</html>

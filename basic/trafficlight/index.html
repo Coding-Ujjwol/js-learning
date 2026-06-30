@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button
+      style="background-color: brown; color: white; cursor: pointer"
+      class="diffrentLight"
+    >
+      Press
+    </button>
+    <script>
+    //   const press = document.getElementsByClassName("diffrentLight");
+    //   const colorArray = ["red", "yellow", "green"];
+     
+    //   //pick random color from array
+    //   function trafficLight() {
+    //     let randomcolor = Math.floor(Math.random() * colorArray.length);
+    //     let index = colorArray[randomcolor];
+
+    //     switch (index) {
+    //       case "red":
+    //         console.log("Stop🛑");
+    //         break;
+    //       case "yellow":
+    //         console.log("Caution⚠️");
+    //         break;
+    //       case "green":
+    //         console.log("Go🟢");
+    //         break;
+    //       default:
+    //         console.log("We have some problem🚨🚨");
+    //     }
+    //   };
+
+    //   press.addEventListner('click',trafficLight)
+      
+
+
+
+      // 1. Get the list of elements with the class, then grab the first one [0]
+      const press = document.getElementsByClassName("diffrentLight")[0];
+      const colorArray = ["red", "yellow", "green"];
+      
+      //pick random color from array
+      function trafficLight() {
+        let randomcolor = Math.floor(Math.random() * colorArray.length);
+        let index = colorArray[randomcolor];
+        
+        switch (index) {
+          case "red":
+            console.log("Stop🛑");
+            break;
+          case "yellow":
+            console.log("Caution⚠️");
+            break;
+          case "green":
+            console.log("Go🟢");
+            break;
+          default:
+            console.log("We have some problem🚨🚨");
+        }
+      }
+
+      // 2. Fixed the spelling of addEventListener
+      press.addEventListener('click', trafficLight);
+      
+    </script>
+  </body>
+</html>

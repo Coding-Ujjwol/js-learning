@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <title>Search Suggestion</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: "Poppins", sans-serif;
+      }
+
+      section {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: radial-gradient(ellipse at center, #eee 0%, #ccc 100%);
+      }
+      section aside {
+        display: flex;
+      }
+
+      section aside div {
+        position: relative;
+      }
+
+      #suggestion {
+        position: absolute;
+        list-style: none;
+        left: 15px;
+        right: 0;
+        box-shadow: 0 2px 5px 0 #b8b8b8;
+      }
+
+      #suggestion li {
+        background-color: #fff;
+        padding: 5px 10px;
+        cursor: pointer;
+        color: #000;
+      }
+
+      input#searchBar {
+        width: 250px;
+        padding: 10px 20px;
+        font-size: 18px;
+        border: #ffa84c solid 2px;
+        border-right: none;
+        background-color: #fff;
+        outline: none;
+        border-radius: 25px 0 0 25px;
+      }
+
+      button[type="button"] {
+        padding: 0 20px;
+        font-size: 18px;
+        font-weight: bold;
+        color: #fff;
+        background-color: #ffa84c;
+        border: none;
+        border-radius: 0 25px 25px 0;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <aside>
+        <div>
+          <input type="text" placeholder="Search Suggestion" id="searchBar" />
+          <ul id="suggestion"></ul>
+        </div>
+        <button type="button">Search</button>
+      </aside>
+    </section>
+    <script>
+      const cities = [
+        "Tokyo, Japan",
+        "New York City, USA",
+        "Paris, France",
+        "London, UK",
+        "Osaka, Japan",
+        "Singapore, Singapore",
+        "Dubai, UAE",
+        "Seoul, South Korea",
+        "Bangkok, Thailand",
+        "Hong Kong, China",
+        "Shanghai, China",
+        "Los Angeles, USA",
+        "Rome, Italy",
+        "Miami, USA",
+        "Las Vegas, USA",
+        "Sydney, Australia",
+        "Toronto, Canada",
+        "San Francisco, USA",
+        "Barcelona, Spain",
+        "Berlin, Germany",
+        "Chicago, USA",
+        "Amsterdam, Netherlands",
+        "Madrid, Spain",
+        "Moscow, Russia",
+        "Istanbul, Turkey",
+        "Vienna, Austria",
+        "Mumbai, India",
+        "Kolkata, India",
+        "Delhi, India",
+        "Bangalore, India",
+        "Hyderabad, India",
+        "Pune, India",
+      ];
+      const searchBar = document.getElementById("searchBar");
+      
+      const ul = document.getElementById("suggestion");
+
+      searchBar.addEventListener("keyup", (event) => {
+        const qry = searchBar.value.toLowerCase();
+
+        const filteredCities = cities.filter((item) =>
+          item.toLowerCase().includes(qry)
+        );
+
+        ul.innerHTML = "";
+        const length = filteredCities.length > 5 ? 5 : filteredCities.length;
+        for (let i = 0; i < length; i++) {
+          const li = document.createElement("li");
+          li.textContent = filteredCities[i];
+          ul.appendChild(li);
+        }
+      });
+
+      ul.addEventListener("click", (event) => {
+        if (event.target.tagName === "LI") {
+          searchBar.value = event.target.textContent;
+          ul.innerHTML = "";
+        }
+      });
+    </script>
+  </body>
+</html>
